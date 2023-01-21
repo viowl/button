@@ -2,19 +2,38 @@ body {
     margin: 0;
 }
 
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 500px;
+
+}
 .btn {
-display: inline-flex;
+    font-weight: 600;
    border-radius: 5px;
    cursor: pointer;
-   background-color: green;
-   color: rgb(42, 34, 122);
+   background-color: rgb(210, 92, 92);
+   color: rgb(98, 84, 245);
    padding: 20px 50px;
    margin: 0px;
    border: none;
+   font: inherit;
+   transition: background-color 300ms linear, color 300ms linear;
 
+}
+
+.btn::after {
+    content: "";
+display: inline-block;
+width: 20px;
+height: 20px;
+background-color: #fff;
 }
 
 .btn:hover,
 .btn:focus {
-    background-color: aqua;
+    background-color: rgb(113, 203, 203);
+    color: tomato;
 }
