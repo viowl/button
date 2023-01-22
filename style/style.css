@@ -1,39 +1,50 @@
-body {
-    margin: 0;
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    height: 500px;
-
-}
 .btn {
-    font-weight: 600;
-   border-radius: 5px;
-   cursor: pointer;
-   background-color: rgb(210, 92, 92);
-   color: rgb(98, 84, 245);
-   padding: 20px 50px;
-   margin: 0px;
-   border: none;
-   font: inherit;
-   transition: background-color 300ms linear, color 300ms linear;
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(210, 92, 92);
+  color: rgb(98, 84, 245);
+  padding: 20px 50px;
+  border: none;
 
+  overflow: hidden;
+
+  transition: background-color 300ms linear, color 300ms linear;
+}
+
+.btn::after,
+.btn::before {
+  display: inline-block;
+  content: "";
+  width: 20px;
+  height: 20px;
 }
 
 .btn::after {
-    content: "";
-display: inline-block;
-width: 20px;
-height: 20px;
-background-color: #fff;
+  margin-left: 10px;
+  background-image: url(/images/frustrated.svg);
+  transition: transform 300ms linear;
+}
+
+.btn:hover::after {
+  transform: translatey(-40px);
+}
+
+.btn::before {
+  position: absolute;
+  left: 110px;
+  top: 64px;
+  margin-right: 10px;
+  background-image: url(/images/happy.svg);
+  transition: transform 300ms linear;
+}
+
+.btn:hover::before {
+  transform: translatey(-44px);
 }
 
 .btn:hover,
 .btn:focus {
-    background-color: rgb(113, 203, 203);
-    color: tomato;
+  background-color: rgb(113, 203, 203);
+  color: tomato;
 }
