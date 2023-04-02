@@ -7,7 +7,7 @@
   padding: 20px 50px;
   border: none;
 
-  overflow: hidden;
+  /* overflow: hidden; */
 
   transition: background-color 300ms linear, color 300ms linear;
 }
@@ -48,3 +48,9 @@
   background-color: rgb(113, 203, 203);
   color: tomato;
 }
+
+
+
+
+
+

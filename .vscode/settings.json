@@ -12,5 +12,6 @@
     "statusBarItem.remoteBackground": "#347E0A",
     "statusBar.debuggingForeground": "#000000",
     "statusBar.debuggingBackground": "#A49939"
-  }
+  },
+  "liveServer.settings.port": 5501
 }
