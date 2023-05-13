@@ -1,159 +1,88 @@
-// const keys = [];
-// const values = [];
-// const advert = {
-// service: "apt",
-// };
-// const apartment = Object.create(advert);
-// apartment.descr = "Spacious apartment in the city center";
-// apartment.rating = 4;
-// apartment.price = 2153;
-
-// for (const key in apartment) {
-// if (apartment.hasOwnProperty(key)) {
-// keys.push(key);
-// }
-// }
-
-// console.log(keys);
-// console.log(values);
-
-// !============================
-
-// const a = [1, 2, 3];
-// const b = a;
-// console.log([1, 2, 3] === b)
-
-// !==========================
-
-/*
- * Работем с коллекцией товаров в корзине:
- * - getItems()
- * - add(product)
- * - remove(productName)
- * - clear()
- * - countTotalPrice()
- * - increaseQuantity(productName)
- * - decreaseQuantity(productName)
- *
- * { name: '🍎', price: 50 }
- * { name: '🍇', price: 70 }
- * { name: '🍋', price: 60 }
- * { name: '🍓', price: 110 }
- */
-
-const cart = {
-  items: [],
-  getItems() {
-    return this.items;
+const users = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    skills: ["ipsum", "lorem"],
+    gender: "male",
+    age: 37,
   },
-  add(product) {
-    const result = [];
-    if (result.some((item) => item.name === product.name)) {
-      product.quantity = product.quantity + 1;
-    } else {
-      result.push({ ...product, quantity: 1 });
-    }
-    console.log("result", this.items);
-    this.items = result;
-
-    console.log("result", this.items);
-    //   for (const item of this.items) {
-
-    //     if (item.name === product.name) {
-    //       item.quantity += 1;
-
-    //       return;
-
-    //     }
-    //   }
-
-    //   const newProduct = {
-    //     ...product,
-    //     quantity: 1,
-    //   };
-
-    //   this.items.push(newProduct);
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+    gender: "female",
+    age: 34,
   },
-  remove(productName) {
-    const { items } = this;
-
-    for (let i = 0; i < items.length; i += 1) {
-      const item = items[i];
-
-      if (productName === item.name) {
-        console.log("нашли такой продукт ", productName);
-        console.log("индекс: ", i);
-
-        items.splice(i, 1);
-      }
-    }
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+    gender: "male",
+    age: 24,
   },
-  clear() {
-    this.items = [];
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    skills: ["adipisicing", "irure", "velit"],
+    gender: "female",
+    age: 21,
   },
-  countTotalPrice() {
-    const { items } = this;
-    let total = 0;
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    skills: ["ex", "culpa", "nostrud"],
+    gender: "male",
+    age: 27,
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    skills: ["non", "amet", "ipsum"],
+    gender: "male",
+    age: 38,
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    skills: ["lorem", "veniam", "culpa"],
+    gender: "female",
+    age: 39,
+  },
+];
 
-    for (const { price, quantity } of items) {
-      total += price * quantity;
-    }
-
-    return total;
-  },
-  increaseQuantity(productName) {
-    for (const item of this.items) {
-      if (item.name === productName) {
-        item.quantity += 1;
-        return;
-      }
-    }
-  },
-  decreaseQuantity(productName) {
-    for (const item of this.items) {
-      if (item.name === productName) {
-        item.quantity -= 1;
-        return;
-      }
-    }
-  },
+const getUserNames = users => {
+  return users.map((user) => user.name);
 };
 
-//   console.log(cart.getItems());
 
-cart.add({ name: "🍎", price: 50 });
-cart.add({ name: "🍎", price: 50 });
-cart.add({ name: "🍇", price: 60 });
-//   cart.add({ name: '🍋', price: 60 });
-//   cart.add({ name: '🍋', price: 60 });
-//   cart.add({ name: '🍓', price: 110 });
-//   cart.add({ name: '🍓', price: 110 });
-//   cart.add({ name: '🍓', price: 110 });
-//   cart.add({ name: '🍋', price: 60 });
-//   cart.add({ name: '🍋', price: 60 });
-//   cart.add({ name: 'sova', price: 100 });
 
-//   cart.increaseQuantity('🍓');
 
-//   console.table(cart.getItems());
-
-//   console.log('Total: ', cart.countTotalPrice());
-
-//   cart.remove('🍇');
-//   console.table(cart.getItems());
-
-// cart.clear();
-// console.log(cart.getItems());
-
-//   console.log('Total: ', cart.countTotalPrice());
-
-console.table(cart.items);
-
-// cart.increaseQuantity('🍎');
-// console.table(cart.getItems());
-
-// cart.decreaseQuantity('🍋');
-// cart.decreaseQuantity('🍋');
-// console.table(cart.getItems());
-
-// !============================
+// Change code above this line
